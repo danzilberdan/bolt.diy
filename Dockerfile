@@ -51,6 +51,8 @@ ENV WRANGLER_SEND_METRICS=false \
     DEFAULT_NUM_CTX=${DEFAULT_NUM_CTX}\
     RUNNING_IN_DOCKER=true
 
+ENV NODE_OPTIONS=“–max-old-space-size=14336”
+
 # Pre-configure wrangler to disable metrics
 RUN mkdir -p /root/.config/.wrangler && \
     echo '{"enabled":false}' > /root/.config/.wrangler/metrics.json
